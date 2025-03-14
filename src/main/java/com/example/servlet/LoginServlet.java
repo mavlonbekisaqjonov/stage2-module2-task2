@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet {
         if (session != null && session.getAttribute("user") != null) {
             response.sendRedirect(request.getContextPath() + "/user/hello.jsp");
         } else {
-            response.sendRedirect(request.getContextPath() + "/login.jsp");
+            response.sendRedirect(request.getContextPath() + "/user/hello.jsp");
         }
     }
 
