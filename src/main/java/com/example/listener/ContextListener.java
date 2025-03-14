@@ -12,11 +12,5 @@ public class ContextListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         LocalDateTime timeInit = LocalDateTime.now();
         sce.getServletContext().setAttribute("servletTimeInit", timeInit);
-        System.out.println("Context initialized at: " + timeInit);
-    }
-
-    @Override
-    public void contextDestroyed(ServletContextEvent sce) {
-        System.out.println("Context is being destroyed.");
     }
 }
