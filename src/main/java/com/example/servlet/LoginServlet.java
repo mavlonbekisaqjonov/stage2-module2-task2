@@ -8,14 +8,16 @@ import java.io.IOException;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession(false);
-        if (session == null || session.getAttribute("user") == null) {
-            response.sendRedirect(request.getContextPath() + "/login.jsp");
-        } else {
+
+        if (session != null && session.getAttribute("user") != null) {
             response.sendRedirect(request.getContextPath() + "/user/hello.jsp");
+        } else {
+            response.sendRedirect(request.getContextPath() + "/login.jsp");
         }
     }
 
